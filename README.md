@@ -26,3 +26,23 @@ Documentation repository for the Job Tracker application. Contains architecture 
 - [Local development setup](guides/local-development.md)
 - [Repository overview](guides/repository-overview.md)
 - [Contributing](guides/contributing.md)
+
+## Future Enhancements
+
+### Observability
+- **Structured logging** — Integrate Serilog across all microservices to produce JSON-formatted logs that can be shipped to a centralized logging platform such as Azure Monitor, AWS CloudWatch, or the ELK stack.
+- **Metrics** — Add Prometheus metrics endpoints to each service and a Grafana dashboard to visualize API request rates, error rates, and Kafka publish success/failure counts.
+- **Distributed tracing** — Implement OpenTelemetry tracing to track requests as they flow across services, with visualization via Jaeger or Azure Application Insights.
+- **Dead letter queue** — Route failed Kafka publish attempts to a dead letter topic for retry and investigation rather than silently dropping events.
+
+### Security
+- **File type validation and virus scanning** — Add file type enforcement and malware scanning to the Resume Service before files are written to blob storage.
+- **Rate limiting** — Add request rate limiting at the API gateway level to prevent abuse.
+
+### Frontend
+- **Angular implementation** — Build the Angular frontend consuming the same API gateway as the React frontend, demonstrating frontend-agnostic backend design.
+- **Reporting dashboard** — Phase 3 pipeline view showing requisitions by status, activity trends, and response rates by source.
+
+### AI Features
+- **Interview prep question generation** — Generate likely interview questions from a stored job description using the AI service.
+- **Job scoring** — Score a requisition against user-defined target role criteria and return a match percentage with rationale.
