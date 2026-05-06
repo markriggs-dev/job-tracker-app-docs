@@ -16,16 +16,18 @@ Documentation repository for the Job Tracker application. Contains architecture 
 
 ### Architecture Decision Records
 - [ADR-001: Microservices with Docker and Kubernetes](adr/ADR-001-microservices-architecture.md)
-- [ADR-002: Kafka as inter-service message bus](adr/ADR-002-kafka-messaging.md)
+- [ADR-002: Kafka as async work queue](adr/ADR-002-kafka-messaging.md)
 - [ADR-003: Auth0 for identity management](adr/ADR-003-auth0-identity.md)
 - [ADR-004: PostgreSQL as primary data store](adr/ADR-004-postgresql.md)
 - [ADR-005: Blob storage for resume files](adr/ADR-005-blob-storage.md)
 - [ADR-006: React and Angular frontends](adr/ADR-006-frontend-frameworks.md)
 
+### User Stories
+- [All user stories](user-stories/user-stories.md)
+
 ### Guides
 - [Local development setup](guides/local-development.md)
 - [Repository overview](guides/repository-overview.md)
-- [Contributing](guides/contributing.md)
 
 ## Future Enhancements
 
@@ -44,5 +46,8 @@ Documentation repository for the Job Tracker application. Contains architecture 
 - **Reporting dashboard** — Phase 3 pipeline view showing requisitions by status, activity trends, and response rates by source.
 
 ### AI Features
+All AI features are user-triggered via explicit action — analysis is never fired automatically on save. This gives the user control over when content is ready for analysis and avoids burning API credits on in-progress drafts.
+
+- **Job description analysis** — User triggers analysis from the job detail page; AI service returns insights, key requirements, and skills extracted from the stored job description.
 - **Interview prep question generation** — Generate likely interview questions from a stored job description using the AI service.
 - **Job scoring** — Score a requisition against user-defined target role criteria and return a match percentage with rationale.
