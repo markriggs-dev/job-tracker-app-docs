@@ -1,8 +1,14 @@
-# NAS deployment guide
+# NAS / VPS deployment guide
 
-Deploys the full backend stack to a UGREEN NAS (UGOS Pro / Debian 12) with
-HTTPS via Nginx Proxy Manager and DuckDNS for dynamic DNS. The React frontend
-is deployed separately to GitHub Pages.
+Deploys the full backend stack with HTTPS via Nginx Proxy Manager. The React
+frontend is deployed separately to GitHub Pages.
+
+> **VPS vs NAS difference:** A VPS (e.g. Akamai) has a static public IP — skip
+> Steps 1 and 2, remove the `duckdns` service from docker-compose.yml, and set
+> your DuckDNS subdomain to the VPS IP once at provisioning. Everything else is
+> identical. Skip the router port forwarding step — cloud VMs are directly
+> internet-accessible on all ports by default (lock down unused ports in the
+> provider's firewall panel).
 
 ## Architecture
 
