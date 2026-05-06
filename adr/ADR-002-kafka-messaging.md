@@ -3,7 +3,7 @@
 **Status:** Accepted  
 **Date:** 2026-04-11  
 **Author:** Mark  
-**Last updated:** 2026-05-05
+**Last updated:** 2026-05-06
 
 ## Context
 
@@ -57,3 +57,14 @@ AI analysis is never triggered automatically. It is user-initiated via an explic
 | Job Service Consumer | `job.application.updated` | Updates job requisition in DB; pushes `jobUpdated` SignalR event |
 | Notification Service | `job.application.created` | Logs event (email notifications reserved for future use cases) |
 | Notification Service | `job.application.updated` | Logs event |
+
+## Topic management
+
+Topics are pre-created by a `kafka-init` one-shot service in `docker-compose.yml`. This service runs after the Kafka broker passes its healthcheck and exits once both topics exist. All Kafka-consuming services (`job-service`, `job-service-consumer`, `notification-service`) declare a `depends_on` condition of `service_completed_successfully` on `kafka-init`, guaranteeing topics are present before any consumer attempts to subscribe.
+
+This avoids two failure modes encountered during development:
+
+- **Broker-side auto-create disabled:** The Confluent cp-kafka image defaults `auto.create.topics.enable=false`, which overrides the client-side `AllowAutoCreateTopics = true` setting. Topics must exist before a consumer subscribes or the broker returns `Unknown topic or partition`.
+- **Race condition on fresh environments:** Without explicit topic pre-creation, the first consumer to start on an empty broker would fail its initial `Consume()` call and enter a retry loop, causing confusing startup errors.
+
+The `--if-not-exists` flag on each `kafka-topics --create` call makes the init step idempotent — safe to run on restarts where topics already exist.

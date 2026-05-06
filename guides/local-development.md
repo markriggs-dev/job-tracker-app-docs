@@ -14,6 +14,7 @@
 git clone https://github.com/your-username/job-tracker-app-infrastructure
 git clone https://github.com/your-username/job-tracker-app-gateway
 git clone https://github.com/your-username/job-tracker-app-job-service
+git clone https://github.com/your-username/job-tracker-app-job-service-consumer
 git clone https://github.com/your-username/job-tracker-app-contact-service
 git clone https://github.com/your-username/job-tracker-app-journal-service
 git clone https://github.com/your-username/job-tracker-app-resume-service
@@ -42,6 +43,8 @@ cd job-tracker-app-infrastructure
 docker compose up -d postgres kafka minio
 ```
 
+The `kafka-init` service runs automatically as part of `docker compose up` and pre-creates the required Kafka topics (`job.application.created`, `job.application.updated`) before any consuming service starts. No manual `kafka-topics` commands are needed.
+
 ## Step 4: Run services locally
 
 Each service runs in its own terminal. Start them individually with `dotnet run`:
@@ -50,6 +53,7 @@ Each service runs in its own terminal. Start them individually with `dotnet run`
 |---------|---------|------|
 | API Gateway | `dotnet run --project job-tracker-app-gateway/src/Gateway.Api` | 5000 |
 | Job Service | `dotnet run --project job-tracker-app-job-service/src/JobService.Api` | 5153 |
+| Job Service Consumer | `dotnet run --project job-tracker-app-job-service-consumer/src/JobServiceConsumer.Api` | 5290 |
 | Contact Service | `dotnet run --project job-tracker-app-contact-service/src/ContactService.Api` | 5297 |
 | Journal Service | `dotnet run --project job-tracker-app-journal-service/src/JournalService.Api` | 5241 |
 | Resume Service | `dotnet run --project job-tracker-app-resume-service/src/ResumeService.Api` | 5271 |
