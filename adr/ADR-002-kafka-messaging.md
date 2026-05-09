@@ -3,7 +3,7 @@
 **Status:** Accepted  
 **Date:** 2026-04-11  
 **Author:** Mark  
-**Last updated:** 2026-05-06
+**Last updated:** 2026-05-09
 
 ## Context
 
@@ -17,6 +17,8 @@ Status changes are handled synchronously — they are lightweight field updates 
 
 AI analysis is never triggered automatically. It is user-initiated via an explicit action on the job detail page, so AI-related events are not part of the Kafka pipeline.
 
+**Contacts, journal entries, and resumes are handled synchronously** and do not publish to Kafka. See the decision boundary section below.
+
 ## Rationale
 
 - The job service does not need to know that any consumer exists. Producers and consumers are fully decoupled.
@@ -26,6 +28,21 @@ AI analysis is never triggered automatically. It is user-initiated via an explic
 - Under high load, consumers process at their own pace without the API blocking or dropping requests.
 - Kafka is the industry standard for distributed event streaming and demonstrates enterprise-grade messaging architecture.
 - SignalR push from the consumer closes the loop to the React client — the UI refreshes when the DB write completes rather than relying on polling or optimistic updates.
+
+## Decision boundary: when to use Kafka vs synchronous writes
+
+The guiding principle is **fan-out**. Kafka is justified when an event needs to reach more than one consumer, or when the producing service should be decoupled from the side effects of its own writes. It is not justified simply because data is being written.
+
+| Service | Pattern | Reason |
+|---------|---------|--------|
+| Job Service (create/edit) | Async via Kafka | Multiple consumers: DB writer, notification service, future AI service. The job service must not know who processes its events. |
+| Job Service (status change) | Synchronous | Single lightweight field update. No downstream service subscribes to status changes. |
+| Contact Service | Synchronous | Single consumer (itself). No other service needs to react to a contact being added or edited. |
+| Journal Service | Synchronous | Single consumer (itself). Journal entries are a private per-job audit trail with no cross-service subscribers. |
+| Resume Service | Synchronous | Single consumer (itself). Binary file payloads are not appropriate for Kafka regardless; metadata writes have no cross-service subscribers. |
+| AI Service (future) | Synchronous / user-triggered | Analysis is initiated by the user, not by a system event. No fan-out required. |
+
+Adding Kafka to a service with a single consumer introduces broker dependency, consumer group management, and topic pre-creation overhead with no architectural benefit. The contact, journal, and resume services gain nothing from async processing today. If a future requirement introduces a second consumer for those events (e.g., a notification on contact interaction, or AI analysis of journal entries), the decision should be revisited and those services migrated to the Kafka pattern at that point.
 
 ## Alternatives considered
 
