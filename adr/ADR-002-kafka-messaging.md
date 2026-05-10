@@ -3,7 +3,7 @@
 **Status:** Accepted  
 **Date:** 2026-04-11  
 **Author:** Mark  
-**Last updated:** 2026-05-09
+**Last updated:** 2026-05-10
 
 ## Context
 
@@ -41,6 +41,7 @@ The guiding principle is **fan-out**. Kafka is justified when an event needs to 
 | Journal Service | Synchronous | Single consumer (itself). Journal entries are a private per-job audit trail with no cross-service subscribers. |
 | Resume Service | Synchronous | Single consumer (itself). Binary file payloads are not appropriate for Kafka regardless; metadata writes have no cross-service subscribers. |
 | AI Service (future) | Synchronous / user-triggered | Analysis is initiated by the user, not by a system event. No fan-out required. |
+| Feedback (user-submitted) | Async via Kafka | The API returns 202 immediately; the Notification Service consumes `feedback.submitted` and sends an email. Decouples the HTTP response from the SMTP call. |
 
 Adding Kafka to a service with a single consumer introduces broker dependency, consumer group management, and topic pre-creation overhead with no architectural benefit. The contact, journal, and resume services gain nothing from async processing today. If a future requirement introduces a second consumer for those events (e.g., a notification on contact interaction, or AI analysis of journal entries), the decision should be revisited and those services migrated to the Kafka pattern at that point.
 
@@ -65,6 +66,7 @@ Adding Kafka to a service with a single consumer introduces broker dependency, c
 |-------|-----------|---------|---------|
 | `job.application.created` | Job Service | POST /api/jobs | JobReqId, UserId, UserEmail, CompanyName, RoleTitle, SourceUrl, CompanyCareerPortalUrl, JobDescription, DateDiscovered, ApplicationExpiryDate, OccurredAt |
 | `job.application.updated` | Job Service | PUT /api/jobs/{id} | JobReqId, UserId, UserEmail, CompanyName, RoleTitle, SourceUrl, CompanyCareerPortalUrl, JobDescription, DateDiscovered, ApplicationExpiryDate, DateSubmitted, OccurredAt |
+| `feedback.submitted` | Notification Service | POST /api/feedback | UserId, UserEmail, UserName, Content, OccurredAt |
 
 ## Current consumers
 
@@ -72,8 +74,9 @@ Adding Kafka to a service with a single consumer introduces broker dependency, c
 |----------|-------|--------|
 | Job Service Consumer | `job.application.created` | Writes new job requisition to DB; pushes `jobCreated` SignalR event |
 | Job Service Consumer | `job.application.updated` | Updates job requisition in DB; pushes `jobUpdated` SignalR event |
-| Notification Service | `job.application.created` | Logs event (email notifications reserved for future use cases) |
+| Notification Service | `job.application.created` | Logs event |
 | Notification Service | `job.application.updated` | Logs event |
+| Notification Service | `feedback.submitted` | Sends feedback email to configured recipient via MailKit SMTP |
 
 ## Topic management
 

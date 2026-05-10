@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mark Riggs — Engineering Leader &amp; Architect specializing in distributed systems, microservices, and AI-assisted development.">
+  <meta property="og:title" content="Mark Riggs — Engineering Leader &amp; Architect">
+  <meta property="og:description" content="Distributed systems. Real problems. Production-grade code.">
+  <meta name="image" property="og:image" content="https://markriggs-dev.github.io/assets/li-featured.png">
+  <title>Mark Riggs — Engineering Leader &amp; Architect</title>
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQEH2LBDGE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DQEH2LBDGE');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","wnnnth6m75");
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav-logo">Mark <span>Riggs</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#tech" class="nav-link">Tech</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#docs" class="nav-link">Docs</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+    <button class="nav-overlay-close" id="navClose" aria-label="Close navigation">&#x2715;</button>
+    <ul class="nav-overlay-links" role="list">
+      <li><a href="#tech" class="nav-overlay-link">Tech</a></li>
+      <li><a href="#architecture" class="nav-overlay-link">Architecture</a></li>
+      <li><a href="#portfolio" class="nav-overlay-link">Portfolio</a></li>
+      <li><a href="#docs" class="nav-overlay-link">Docs</a></li>
+      <li><a href="#contact" class="nav-overlay-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="hero-eyebrow">Engineering Leader &amp; Architect</p>
+            <h1 class="hero-name">Mark<br><span class="gradient-text">Riggs</span></h1>
+            <p class="hero-title">.NET &middot; React &middot; Distributed Systems &middot; AI</p>
+            <p class="hero-tagline">
+              <span id="typewriter"></span><span class="cursor" aria-hidden="true"></span>
+            </p>
+            <div class="hero-ctas">
+              <a href="#portfolio" class="btn btn-primary">View My Work</a>
+              <a href="https://github.com/markriggs-dev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="avatar-ring-2" aria-hidden="true"></div>
+            <div class="avatar-ring" aria-hidden="true"></div>
+            <img
+              id="profileAvatar"
+              src="assets/profile.jpg"
+              alt="Mark Riggs"
+              class="hero-avatar"
+              width="240"
+              height="240"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="tech" class="section tech">
+      <div class="container">
+        <p class="section-label fade-in">Technologies</p>
+        <h2 class="section-title fade-in">Built with the <span class="gradient-text">right tools</span></h2>
+        <p class="section-intro fade-in">
+          Not a list of buzzwords &mdash; a set of technologies used together to build a real distributed system,
+          each chosen for a deliberate reason.
+        </p>
+        <div class="tech-groups">
+
+          <div class="tech-group fade-in">
+            <p class="tech-group-label">Frontend</p>
+            <div class="tech-grid">
+              <div class="tech-item"><i class="devicon-react-original colored" aria-hidden="true"></i><span class="tech-item-name">React</span></div>
+              <div class="tech-item"><i class="devicon-typescript-plain colored" aria-hidden="true"></i><span class="tech-item-name">TypeScript</span></div>
+              <div class="tech-item"><span class="tech-icon-text" aria-hidden="true">Vite</span><span class="tech-item-name">Vite</span></div>
+              <div class="tech-item"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span class="tech-item-name">HTML5</span></div>
+              <div class="tech-item"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span class="tech-item-name">CSS3</span></div>
+            </div>
+          </div>
+
+          <div class="tech-group fade-in">
+            <p class="tech-group-label">Backend</p>
+            <div class="tech-grid">
+              <div class="tech-item"><i class="devicon-dotnetcore-plain colored" aria-hidden="true"></i><span class="tech-item-name">.NET 8 / C#</span></div>
+              <div class="tech-item"><span class="tech-icon-text" aria-hidden="true">EF</span><span class="tech-item-name">Entity Framework Core</span></div>
+              <div class="tech-item"><span class="tech-icon-text" aria-hidden="true">SR</span><span class="tech-item-name">SignalR</span></div>
+              <div class="tech-item"><span class="tech-icon-text" aria-hidden="true">YARP</span><span class="tech-item-name">YARP Reverse Proxy</span></div>
+            </div>
+          </div>
+
+          <div class="tech-group fade-in">
+            <p class="tech-group-label">Messaging &amp; Storage</p>
+            <div class="tech-grid">
+              <div class="tech-item"><span class="tech-icon-text" aria-hidden="true">&#x26A1;</span><span class="tech-item-name">Apache Kafka</span></div>
+              <div class="tech-item"><i class="devicon-postgresql-plain colored" aria-hidden="true"></i><span class="tech-item-name">PostgreSQL</span></div>
+              <div class="tech-item"><i class="devicon-microsoftsqlserver-plain colored" aria-hidden="true"></i><span class="tech-item-name">SQL Server</span></div>
+              <div class="tech-item"><i class="devicon-oracle-original colored" aria-hidden="true"></i><span class="tech-item-name">Oracle</span></div>
+              <div class="tech-item"><span class="tech-icon-text" aria-hidden="true">Db2</span><span class="tech-item-name">IBM Db2</span></div>
+              <div class="tech-item"><span class="tech-icon-text" aria-hidden="true">S3</span><span class="tech-item-name">MinIO</span></div>
+            </div>
+          </div>
+
+          <div class="tech-group fade-in">
+            <p class="tech-group-label">Infrastructure &amp; Auth</p>
+            <div class="tech-grid">
+              <div class="tech-item"><i class="devicon-docker-plain colored" aria-hidden="true"></i><span class="tech-item-name">Docker</span></div>
+              <div class="tech-item"><i class="devicon-kubernetes-plain colored" aria-hidden="true"></i><span class="tech-item-name">Kubernetes</span></div>
+              <div class="tech-item"><span class="tech-icon-text" aria-hidden="true">A0</span><span class="tech-item-name">Auth0</span></div>
+              <div class="tech-item"><span class="tech-icon-text" aria-hidden="true">Ok</span><span class="tech-item-name">Okta</span></div>
+              <div class="tech-item"><i class="devicon-github-original colored" aria-hidden="true"></i><span class="tech-item-name">GitHub Actions</span></div>
+            </div>
+          </div>
+
+          <div class="tech-group fade-in">
+            <p class="tech-group-label">Cloud Platforms</p>
+            <div class="tech-grid">
+              <div class="tech-item"><i class="devicon-azure-plain colored" aria-hidden="true"></i><span class="tech-item-name">Microsoft Azure</span></div>
+              <div class="tech-item"><i class="devicon-amazonwebservices-plain-wordmark colored" aria-hidden="true"></i><span class="tech-item-name">Amazon AWS</span></div>
+            </div>
+          </div>
+
+          <div class="tech-group tech-group-ai fade-in">
+            <p class="tech-group-label">AI-Assisted Development</p>
+            <div class="tech-grid">
+              <div class="tech-item tech-item-ai"><span class="tech-icon-text ai" aria-hidden="true">CC</span><span class="tech-item-name">Claude Code</span></div>
+              <div class="tech-item tech-item-ai"><i class="devicon-github-original colored" aria-hidden="true"></i><span class="tech-item-name">GitHub Copilot</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture" class="section architecture">
+      <div class="container">
+        <p class="section-label fade-in">Design Principles</p>
+        <h2 class="section-title fade-in">Architectural <span class="gradient-text">patterns</span></h2>
+        <p class="section-intro fade-in">
+          Good systems are designed before they are built. These are the architectural patterns and
+          cloud-native principles that inform every technical decision.
+        </p>
+        <div class="arch-pattern-grid">
+
+          <div class="arch-pattern-card fade-in">
+            <div class="arch-pattern-icon" aria-hidden="true">&#x1F504;</div>
+            <h3 class="arch-pattern-title">Client/Server &amp; API Design</h3>
+            <div class="arch-pattern-diagram">
+              <svg class="arch-pattern-diagram-svg" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Client -->
+                <rect x="90" y="6" width="120" height="24" rx="5" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.28)" stroke-width="1"/>
+                <text x="150" y="22" text-anchor="middle" font-size="10" font-family="'JetBrains Mono',monospace" fill="#818cf8">Client / Browser</text>
+                <!-- Client → Gateway -->
+                <line x1="150" y1="30" x2="150" y2="38" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+                <polygon points="147,35 153,35 150,39" fill="rgba(255,255,255,0.14)"/>
+                <!-- API Gateway -->
+                <rect x="80" y="40" width="140" height="24" rx="5" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.28)" stroke-width="1"/>
+                <text x="150" y="56" text-anchor="middle" font-size="10" font-family="'JetBrains Mono',monospace" fill="#a78bfa">API Gateway</text>
+                <!-- Gateway → Services fan -->
+                <line x1="150" y1="64" x2="58"  y2="78" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <line x1="150" y1="64" x2="150" y2="78" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <line x1="150" y1="64" x2="242" y2="78" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                <!-- Services -->
+                <rect x="18"  y="78" width="80" height="24" rx="5" fill="rgba(20,184,166,0.1)" stroke="rgba(20,184,166,0.24)" stroke-width="1"/>
+                <text x="58"  y="94" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#2dd4bf">Service A</text>
+                <rect x="110" y="78" width="80" height="24" rx="5" fill="rgba(20,184,166,0.1)" stroke="rgba(20,184,166,0.24)" stroke-width="1"/>
+                <text x="150" y="94" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#2dd4bf">Service B</text>
+                <rect x="202" y="78" width="80" height="24" rx="5" fill="rgba(20,184,166,0.1)" stroke="rgba(20,184,166,0.24)" stroke-width="1"/>
+                <text x="242" y="94" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#2dd4bf">Service C</text>
+                <!-- Services → Data collect lines -->
+                <line x1="58"  y1="102" x2="58"  y2="114" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <line x1="150" y1="102" x2="150" y2="114" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <line x1="242" y1="102" x2="242" y2="114" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <line x1="58"  y1="114" x2="242" y2="114" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <line x1="150" y1="114" x2="150" y2="118" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <polygon points="147,115 153,115 150,119" fill="rgba(255,255,255,0.1)"/>
+                <!-- Data Layer -->
+                <rect x="90" y="120" width="120" height="24" rx="5" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.24)" stroke-width="1"/>
+                <text x="150" y="136" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#60a5fa">Data Layer</text>
+              </svg>
+            </div>
+            <p class="arch-pattern-desc">
+              N-tier separation of presentation, business logic, and data. RESTful API design with
+              clear contracts, gateway patterns for single-entry-point routing, and stateless services
+              that scale horizontally without shared state.
+            </p>
+            <div class="card-badges">
+              <span class="badge">REST / HTTP</span>
+              <span class="badge">API Gateway</span>
+              <span class="badge">N-Tier</span>
+              <span class="badge">Stateless Services</span>
+              <span class="badge">Load Balancing</span>
+              <span class="badge">JWT / OAuth2</span>
+            </div>
+          </div>
+
+          <div class="arch-pattern-card fade-in">
+            <div class="arch-pattern-icon" aria-hidden="true">&#x2601;&#xFE0F;</div>
+            <h3 class="arch-pattern-title">Cloud-Native Architecture</h3>
+            <div class="arch-pattern-diagram">
+              <svg class="arch-pattern-diagram-svg" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Users -->
+                <rect x="110" y="6" width="80" height="22" rx="5" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.28)" stroke-width="1"/>
+                <text x="150" y="21" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#818cf8">Users</text>
+                <!-- Users → LB -->
+                <line x1="150" y1="28" x2="150" y2="36" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+                <polygon points="147,33 153,33 150,37" fill="rgba(255,255,255,0.14)"/>
+                <!-- Load Balancer / CDN -->
+                <rect x="80" y="38" width="140" height="22" rx="5" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.28)" stroke-width="1"/>
+                <text x="150" y="53" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#a78bfa">Load Balancer / CDN</text>
+                <!-- LB → Cluster -->
+                <line x1="150" y1="60" x2="150" y2="68" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+                <polygon points="147,65 153,65 150,69" fill="rgba(255,255,255,0.14)"/>
+                <!-- Container Cluster -->
+                <rect x="16" y="70" width="268" height="34" rx="5" fill="rgba(20,184,166,0.08)" stroke="rgba(20,184,166,0.22)" stroke-width="1"/>
+                <text x="150" y="84" text-anchor="middle" font-size="10" font-family="'JetBrains Mono',monospace" fill="#2dd4bf">Container Cluster</text>
+                <text x="150" y="97" text-anchor="middle" font-size="8"  font-family="'JetBrains Mono',monospace" fill="rgba(45,212,191,0.5)">AKS · EKS · Docker</text>
+                <!-- Cluster → Managed Services -->
+                <line x1="56"  y1="104" x2="56"  y2="114" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <line x1="150" y1="104" x2="150" y2="114" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <line x1="244" y1="104" x2="244" y2="114" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                <!-- Managed DB -->
+                <rect x="16"  y="114" width="80" height="26" rx="5" fill="rgba(59,130,246,0.1)"  stroke="rgba(59,130,246,0.24)"  stroke-width="1"/>
+                <text x="56"  y="126" text-anchor="middle" font-size="8"  font-family="'JetBrains Mono',monospace" fill="#60a5fa">Managed DB</text>
+                <text x="56"  y="136" text-anchor="middle" font-size="7"  font-family="'JetBrains Mono',monospace" fill="rgba(96,165,250,0.5)">RDS · Cosmos DB</text>
+                <!-- Message Queue -->
+                <rect x="110" y="114" width="80" height="26" rx="5" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.24)" stroke-width="1"/>
+                <text x="150" y="126" text-anchor="middle" font-size="8"  font-family="'JetBrains Mono',monospace" fill="#fbbf24">Message Queue</text>
+                <text x="150" y="136" text-anchor="middle" font-size="7"  font-family="'JetBrains Mono',monospace" fill="rgba(251,191,36,0.5)">SQS · Service Bus</text>
+                <!-- Identity / Auth -->
+                <rect x="204" y="114" width="80" height="26" rx="5" fill="rgba(236,72,153,0.08)" stroke="rgba(236,72,153,0.22)" stroke-width="1"/>
+                <text x="244" y="126" text-anchor="middle" font-size="8"  font-family="'JetBrains Mono',monospace" fill="#f472b6">Identity / Auth</text>
+                <text x="244" y="136" text-anchor="middle" font-size="7"  font-family="'JetBrains Mono',monospace" fill="rgba(244,114,182,0.5)">Cognito · Azure AD</text>
+              </svg>
+            </div>
+            <p class="arch-pattern-desc">
+              Cloud-first design on Azure and AWS &mdash; leveraging managed services, containerised
+              workloads on AKS/EKS, and platform-native messaging to build systems that scale
+              without the operational overhead.
+            </p>
+            <div class="card-badges">
+              <span class="badge badge-azure">Azure AKS</span>
+              <span class="badge badge-azure">Service Bus</span>
+              <span class="badge badge-azure">Azure AD</span>
+              <span class="badge badge-aws">AWS ECS/EKS</span>
+              <span class="badge badge-aws">SQS / SNS</span>
+              <span class="badge badge-aws">Cognito</span>
+              <span class="badge">Serverless</span>
+              <span class="badge">IaC</span>
+            </div>
+          </div>
+
+          <div class="arch-pattern-card fade-in">
+            <div class="arch-pattern-icon" aria-hidden="true">&#x1F4C8;</div>
+            <h3 class="arch-pattern-title">Scalable &amp; Resilient Systems</h3>
+            <div class="arch-pattern-diagram">
+              <svg class="arch-pattern-diagram-svg" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Producer -->
+                <rect x="8" y="10" width="62" height="26" rx="5" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.28)" stroke-width="1"/>
+                <text x="39" y="26" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#818cf8">Producer</text>
+                <!-- Producer → Broker -->
+                <line x1="70" y1="23" x2="82" y2="23" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+                <polygon points="78,20 82,23 78,26" fill="rgba(255,255,255,0.18)"/>
+                <!-- Event Broker (taller to allow branch) -->
+                <rect x="82" y="6" width="76" height="34" rx="5" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.26)" stroke-width="1"/>
+                <text x="120" y="21" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#fbbf24">Event</text>
+                <text x="120" y="34" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#fbbf24">Broker</text>
+                <!-- Broker → Consumer A -->
+                <line x1="158" y1="20" x2="170" y2="20" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+                <polygon points="166,17 170,20 166,23" fill="rgba(255,255,255,0.18)"/>
+                <!-- Consumer A -->
+                <rect x="170" y="10" width="72" height="26" rx="5" fill="rgba(20,184,166,0.1)" stroke="rgba(20,184,166,0.24)" stroke-width="1"/>
+                <text x="206" y="26" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#2dd4bf">Consumer A</text>
+                <!-- Consumer A → Store -->
+                <line x1="242" y1="23" x2="254" y2="23" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+                <polygon points="250,20 254,23 250,26" fill="rgba(255,255,255,0.18)"/>
+                <!-- Data Store -->
+                <rect x="254" y="10" width="38" height="26" rx="5" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.24)" stroke-width="1"/>
+                <text x="273" y="26" text-anchor="middle" font-size="8" font-family="'JetBrains Mono',monospace" fill="#60a5fa">Store</text>
+                <!-- Broker → Consumer B branch -->
+                <line x1="120" y1="40" x2="120" y2="52" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                <polygon points="117,48 123,48 120,53" fill="rgba(255,255,255,0.12)"/>
+                <!-- Consumer B -->
+                <rect x="82" y="54" width="76" height="26" rx="5" fill="rgba(20,184,166,0.1)" stroke="rgba(20,184,166,0.24)" stroke-width="1"/>
+                <text x="120" y="70" text-anchor="middle" font-size="9" font-family="'JetBrains Mono',monospace" fill="#2dd4bf">Consumer B</text>
+                <!-- Resilience strip -->
+                <rect x="8" y="94" width="284" height="48" rx="5" fill="rgba(99,102,241,0.06)" stroke="rgba(99,102,241,0.14)" stroke-width="1"/>
+                <line x1="103" y1="98" x2="103" y2="138" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                <line x1="197" y1="98" x2="197" y2="138" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                <text x="55"  y="111" text-anchor="middle" font-size="8" font-family="'JetBrains Mono',monospace" fill="rgba(129,140,248,0.8)">Circuit Breaker</text>
+                <text x="150" y="111" text-anchor="middle" font-size="8" font-family="'JetBrains Mono',monospace" fill="rgba(129,140,248,0.8)">Health Checks</text>
+                <text x="246" y="111" text-anchor="middle" font-size="8" font-family="'JetBrains Mono',monospace" fill="rgba(129,140,248,0.8)">Retry / Backoff</text>
+                <text x="55"  y="126" text-anchor="middle" font-size="7" font-family="'JetBrains Mono',monospace" fill="rgba(129,140,248,0.4)">fault isolation</text>
+                <text x="150" y="126" text-anchor="middle" font-size="7" font-family="'JetBrains Mono',monospace" fill="rgba(129,140,248,0.4)">liveness · readiness</text>
+                <text x="246" y="126" text-anchor="middle" font-size="7" font-family="'JetBrains Mono',monospace" fill="rgba(129,140,248,0.4)">exponential backoff</text>
+              </svg>
+            </div>
+            <p class="arch-pattern-desc">
+              Event-driven microservices, horizontal scaling, and resilience patterns designed for
+              failure. Systems that degrade gracefully, recover automatically, and maintain consistency
+              without tight coupling.
+            </p>
+            <div class="card-badges">
+              <span class="badge">Microservices</span>
+              <span class="badge">Event-Driven</span>
+              <span class="badge">CQRS</span>
+              <span class="badge">Circuit Breaker</span>
+              <span class="badge">Async Messaging</span>
+              <span class="badge">Retry / Backoff</span>
+              <span class="badge">Health Checks</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section portfolio">
+      <div class="container">
+        <p class="section-label fade-in">Work</p>
+        <h2 class="section-title fade-in">Portfolio <span class="gradient-text">projects</span></h2>
+        <div class="portfolio-grid">
+
+          <article class="card fade-in">
+            <div class="card-header">
+              <div class="card-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path><rect x="9" y="3" width="6" height="4" rx="1"></rect><path d="M9 12h6M9 16h4"></path></svg>
+              </div>
+              <div>
+                <h3 class="card-title">Job Tracker</h3>
+                <p class="card-subtitle">Distributed Microservices System</p>
+              </div>
+            </div>
+            <p class="card-description">
+              Full-stack job search tracker built as a distributed microservices system. Demonstrates
+              Kafka async messaging, SignalR real-time push, YARP reverse proxy, Auth0 authentication,
+              and a React frontend &mdash; all independently deployable services behind an API gateway.
+            </p>
+            <div class="card-badges">
+              <span class="badge badge-accent">.NET 8</span>
+              <span class="badge">React</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">Kafka</span>
+              <span class="badge">SignalR</span>
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">Docker</span>
+              <span class="badge">Auth0</span>
+              <span class="badge">YARP</span>
+              <span class="badge">MinIO</span>
+              <span class="badge">EF Core</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://github.com/markriggs-dev/job-tracker-app-docs" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                Docs
+              </a>
+              <a href="https://github.com/markriggs-dev" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                View Code
+              </a>
+              <a href="#job-tracker-architecture" class="btn btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="6" height="4" rx="1"/><rect x="9" y="3" width="6" height="4" rx="1"/><rect x="16" y="3" width="6" height="4" rx="1"/><path d="M5 7v4m7-4v4m7-4v4M5 11h14M5 15h14M5 19h14" stroke-dasharray="0"/><rect x="2" y="11" width="6" height="4" rx="1"/><rect x="9" y="11" width="6" height="4" rx="1"/><rect x="16" y="11" width="6" height="4" rx="1"/></svg>
+                Architecture
+              </a>
+              <a href="https://markriggs-dev.github.io/job-tracker-app-web-react/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                &#x1F680; Launch App
+              </a>
+            </div>
+          </article>
+
+          <article class="card card-placeholder fade-in" aria-label="More projects coming soon">
+            <div class="card-placeholder-icon" aria-hidden="true">&#x26A1;</div>
+            <p class="card-placeholder-text">More projects in progress</p>
+            <p class="card-placeholder-sub">Built with AI. Shipped with intent.</p>
+          </article>
+
+        </div>
+
+        <!-- JOB TRACKER ARCHITECTURE -->
+        <div class="jt-architecture" id="job-tracker-architecture">
+          <div class="jt-arch-header fade-in">
+            <h3 class="jt-arch-title">Job Tracker: <span class="gradient-text">Architecture Overview</span></h3>
+            <p class="jt-arch-subtitle">
+              The Job Tracker is a microservices system built around deliberate architectural tradeoffs.
+              The Job Service publishes to Kafka and returns 202 immediately &mdash; the consumer handles the
+              DB write asynchronously. All traffic enters through a YARP gateway on port 5000, which validates
+              Auth0 JWTs before routing downstream. SignalR at the consumer layer pushes real-time updates
+              back to the React frontend via TanStack Query invalidation.
+            </p>
+            <a href="https://github.com/markriggs-dev/job-tracker-app-docs" target="_blank" rel="noopener noreferrer" class="arch-link">
+              View Architecture Decision Records on GitHub &rarr;
+            </a>
+          </div>
+
+          <div class="arch-diagram fade-in" role="img" aria-label="Job Tracker system architecture diagram">
+
+            <div class="arch-auth-banner">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Auth0 Identity &mdash; JWT validated at the gateway and all downstream services
+            </div>
+
+            <div class="arch-row">
+              <div class="arch-node node-frontend">
+                <div class="arch-node-name">React Frontend</div>
+                <div class="arch-node-sub">TypeScript &middot; Vite &middot; TanStack Query</div>
+              </div>
+            </div>
+
+            <div class="arch-connector">
+              <span class="arch-arrow-char">&#x2193;</span>
+              <span class="arch-connector-label">HTTPS</span>
+            </div>
+
+            <div class="arch-row">
+              <div class="arch-node node-gateway">
+                <div class="arch-node-name">YARP API Gateway</div>
+                <div class="arch-node-sub">Port 5000 &middot; Reverse Proxy &middot; JWT</div>
+              </div>
+            </div>
+
+            <div class="arch-connector">
+              <span class="arch-arrow-char">&#x2193;</span>
+              <span class="arch-connector-label">routes to microservices</span>
+            </div>
+
+            <div class="arch-row arch-row-wrap">
+              <div class="arch-node node-service">
+                <div class="arch-node-name">Job Service</div>
+                <div class="arch-node-sub">Kafka pub &middot; 202 pattern</div>
+              </div>
+              <div class="arch-node node-service">
+                <div class="arch-node-name">Contact Service</div>
+                <div class="arch-node-sub">.NET 8 &middot; EF Core</div>
+              </div>
+              <div class="arch-node node-service">
+                <div class="arch-node-name">Journal Service</div>
+                <div class="arch-node-sub">.NET 8 &middot; EF Core</div>
+              </div>
+              <div class="arch-node node-service">
+                <div class="arch-node-name">Resume Service</div>
+                <div class="arch-node-sub">.NET 8 &middot; MinIO</div>
+              </div>
+              <div class="arch-node node-service">
+                <div class="arch-node-name">Notification Service</div>
+                <div class="arch-node-sub">Kafka consumer &middot; logging</div>
+              </div>
+            </div>
+
+            <div class="arch-connector">
+              <span class="arch-arrow-char">&#x2193;</span>
+              <span class="arch-connector-label">async messaging &amp; storage</span>
+            </div>
+
+            <div class="arch-row arch-row-wrap">
+              <div class="arch-node node-kafka">
+                <div class="arch-node-name">Apache Kafka</div>
+                <div class="arch-node-sub">job.created &middot; job.updated</div>
+              </div>
+              <div class="arch-node node-storage">
+                <div class="arch-node-name">MinIO Object Store</div>
+                <div class="arch-node-sub">Resume file storage</div>
+              </div>
+            </div>
+
+            <div class="arch-connector">
+              <span class="arch-arrow-char">&#x2193;</span>
+              <span class="arch-connector-label">consumed by</span>
+            </div>
+
+            <div class="arch-row arch-row-wrap">
+              <div class="arch-node node-service">
+                <div class="arch-node-name">Job Consumer</div>
+                <div class="arch-node-sub">EF Core &middot; SignalR hub</div>
+              </div>
+              <div class="arch-node node-storage">
+                <div class="arch-node-name">PostgreSQL</div>
+                <div class="arch-node-sub">EF Core migrations</div>
+              </div>
+            </div>
+
+            <div class="arch-signalr-note">
+              <span class="arch-signalr-badge">SignalR /hubs/jobs</span>
+              pushes <code>jobCreated</code> / <code>jobUpdated</code> &rarr; React (TanStack Query invalidation)
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DOCS -->
+    <section id="docs" class="section docs">
+      <div class="container">
+        <p class="section-label fade-in">Engineering Rigour</p>
+        <h2 class="section-title fade-in">Documentation <span class="gradient-text">&amp; ADRs</span></h2>
+        <p class="section-intro fade-in">
+          Every architectural decision is documented. Real engineering leaves a paper trail.
+        </p>
+        <div class="docs-grid">
+
+          <a href="https://github.com/markriggs-dev/job-tracker-app-docs" target="_blank" rel="noopener noreferrer" class="doc-card fade-in">
+            <div class="doc-card-icon" aria-hidden="true">&#x1F4CB;</div>
+            <div>
+              <p class="doc-card-title">Architecture Decision Records</p>
+              <p class="doc-card-desc">ADRs documenting key decisions &mdash; Kafka vs REST, gateway pattern, async 202 tradeoffs</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/markriggs-dev/job-tracker-app-infrastructure" target="_blank" rel="noopener noreferrer" class="doc-card fade-in">
+            <div class="doc-card-icon" aria-hidden="true">&#x1F433;</div>
+            <div>
+              <p class="doc-card-title">Infrastructure &amp; Local Dev</p>
+              <p class="doc-card-desc">Docker Compose stack, Nginx Proxy Manager config, and local development guide</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/markriggs-dev/job-tracker-app-gateway" target="_blank" rel="noopener noreferrer" class="doc-card fade-in">
+            <div class="doc-card-icon" aria-hidden="true">&#x1F500;</div>
+            <div>
+              <p class="doc-card-title">API Gateway</p>
+              <p class="doc-card-desc">YARP reverse proxy with Auth0 JWT validation &mdash; single entry point for all services</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/markriggs-dev/job-tracker-app-job-service" target="_blank" rel="noopener noreferrer" class="doc-card fade-in">
+            <div class="doc-card-icon" aria-hidden="true">&#x2699;&#xFE0F;</div>
+            <div>
+              <p class="doc-card-title">Job Service</p>
+              <p class="doc-card-desc">Kafka publisher with 202 async pattern &mdash; fire-and-forget job tracking</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/markriggs-dev/job-tracker-app-web-react" target="_blank" rel="noopener noreferrer" class="doc-card fade-in">
+            <div class="doc-card-icon" aria-hidden="true">&#x269B;&#xFE0F;</div>
+            <div>
+              <p class="doc-card-title">React Frontend</p>
+              <p class="doc-card-desc">TypeScript + Vite SPA with TanStack Query and SignalR real-time updates</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/markriggs-dev" target="_blank" rel="noopener noreferrer" class="doc-card fade-in">
+            <div class="doc-card-icon" aria-hidden="true">&#x1F5C2;&#xFE0F;</div>
+            <div>
+              <p class="doc-card-title">Full Repository Index</p>
+              <p class="doc-card-desc">All repos under github.com/markriggs-dev &mdash; browse the full project portfolio</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <p class="section-label fade-in">Get in Touch</p>
+        <h2 class="section-title fade-in">Let&rsquo;s <span class="gradient-text">connect</span></h2>
+        <div class="contact-roles fade-in">
+          <span class="contact-role-badge">Director of Engineering</span>
+          <span class="contact-role-badge">Engineering Manager</span>
+          <span class="contact-role-badge">Principal Engineer</span>
+        </div>
+        <p class="contact-available fade-in">
+          <span class="available-dot" aria-hidden="true"></span>
+          Available immediately &mdash; let&rsquo;s talk.
+        </p>
+        <div class="contact-links fade-in">
+          <a href="https://github.com/markriggs-dev" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/riggsmark/" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:markriggs@outlook.com" class="contact-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-text">Built by Mark Riggs with Claude Code &middot; markriggs-dev.github.io</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
