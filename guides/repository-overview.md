@@ -17,7 +17,7 @@ The Job Tracker application uses a polyrepo structure. Each service and frontend
 | job-tracker-app-user-service | .NET 8 | User preferences |
 | job-tracker-app-web-react | React / TypeScript | Primary frontend (MVP) |
 | job-tracker-app-web-angular | Angular / TypeScript | Secondary frontend (Phase 2) |
-| job-tracker-app-infrastructure | Docker / Kubernetes | Local dev and deployment config |
+| job-tracker-app-infrastructure | Docker / Kubernetes / Terraform | Local dev, Docker Compose stack, and Terraform VPS provisioning (Akamai/Linode) |
 | job-tracker-app-shared | .NET 8 library | Shared DTOs, events, enums |
 | job-tracker-app-docs | Markdown | All documentation |
 
