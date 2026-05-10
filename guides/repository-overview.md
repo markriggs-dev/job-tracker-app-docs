@@ -11,8 +11,9 @@ The Job Tracker application uses a polyrepo structure. Each service and frontend
 | job-tracker-app-contact-service | .NET 8 | Contact management |
 | job-tracker-app-journal-service | .NET 8 | Activity journal |
 | job-tracker-app-resume-service | .NET 8 | Resume versioning and blob storage |
+| job-tracker-app-experience-service | .NET 8 | Work experience document storage and serving |
 | job-tracker-app-notification-service | .NET 8 | Async Kafka consumer — processes job create/edit events, sends SMTP email |
-| job-tracker-app-ai-service | .NET 8 | LLM integrations |
+| job-tracker-app-ai-service | .NET 8 | AI profile management, server-side prompt assembly, Claude resume generation |
 | job-tracker-app-user-service | .NET 8 | User preferences |
 | job-tracker-app-web-react | React / TypeScript | Primary frontend (MVP) |
 | job-tracker-app-web-angular | Angular / TypeScript | Secondary frontend (Phase 2) |

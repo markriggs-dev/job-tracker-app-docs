@@ -54,6 +54,7 @@ Stories are assigned to one of three phases. MVP covers the core functionality r
 | US-053 | Receive a reminder when an application expiry date is approaching | Phase 2 | Should have |
 | US-060 | Extract key requirements from a job description | Phase 2 | Should have |
 | US-061 | Draft a recruiter outreach or follow-up message using AI | Phase 2 | Should have |
+| US-064 | Generate a tailored resume using AI | MVP | Must have |
 | US-062 | Score a job requisition against my target role criteria | Phase 2 | Nice to have |
 | US-063 | Generate interview prep questions from a job description | Phase 2 | Nice to have |
 | US-070 | View a pipeline dashboard showing requisitions by status | Phase 3 | Nice to have |
@@ -495,6 +496,25 @@ As a **job seeker**, I want to **receive a reminder when an application expiry d
 ## AI-assisted features
 
 These stories cover AI and LLM-powered features that help the user work more efficiently. All AI features are user-triggered via an explicit action — analysis is never fired automatically on save. This gives the user control over when content is ready for analysis and avoids processing incomplete drafts.
+
+### US-064
+
+As a **job seeker**, I want to **generate a tailored resume using AI**, so that **I can quickly produce a version of my resume optimized for a specific job description without starting from scratch**.
+
+**Priority:** Must have  
+**Phase:** MVP
+
+**Acceptance criteria:**
+- An AI tab is available on the job requisition detail view
+- The user selects a work experience profile and an AI instruction profile before generating
+- The system assembles a complete prompt server-side using the stored job description, experience document content, and AI profile instructions
+- The assembled prompt is displayed in a copyable text area
+- Step-by-step instructions guide the user through pasting the prompt into Claude.ai
+- If the experience document is a plain text file, its content is embedded directly in the prompt
+- If the experience document is a binary format (PDF/DOCX), the prompt instructs the user to attach it manually in Claude.ai
+- The generate action is user-triggered — it never runs automatically
+
+---
 
 ### US-060
 

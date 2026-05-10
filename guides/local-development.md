@@ -18,6 +18,7 @@ git clone https://github.com/your-username/job-tracker-app-job-service-consumer
 git clone https://github.com/your-username/job-tracker-app-contact-service
 git clone https://github.com/your-username/job-tracker-app-journal-service
 git clone https://github.com/your-username/job-tracker-app-resume-service
+git clone https://github.com/your-username/job-tracker-app-experience-service
 git clone https://github.com/your-username/job-tracker-app-notification-service
 git clone https://github.com/your-username/job-tracker-app-ai-service
 git clone https://github.com/your-username/job-tracker-app-user-service
@@ -34,7 +35,7 @@ cd job-tracker-app-infrastructure
 cp .env.example .env
 ```
 
-Edit `.env` and fill in your Auth0 credentials and API keys.
+Edit `.env` and fill in your Auth0 credentials and API keys. `ANTHROPIC_API_KEY` is required only if enabling the API Service Model resume generation feature; it can be left blank otherwise.
 
 ## Step 3: Start infrastructure dependencies
 
@@ -57,6 +58,8 @@ Each service runs in its own terminal. Start them individually with `dotnet run`
 | Contact Service | `dotnet run --project job-tracker-app-contact-service/src/ContactService.Api` | 5297 |
 | Journal Service | `dotnet run --project job-tracker-app-journal-service/src/JournalService.Api` | 5241 |
 | Resume Service | `dotnet run --project job-tracker-app-resume-service/src/ResumeService.Api` | 5271 |
+| Experience Service | `dotnet run --project job-tracker-app-experience-service/src/ExperienceService.Api` | 5281 |
+| AI Service | `dotnet run --project job-tracker-app-ai-service/src/AiService.Api` | 5007 |
 | Notification Service | `dotnet run --project job-tracker-app-notification-service/src/NotificationService.Api` | 5261 |
 
 All frontend traffic flows through the API Gateway on port 5000. Individual service ports are not accessed by the frontend directly.
