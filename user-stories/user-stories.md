@@ -45,9 +45,10 @@ Stories are assigned to one of three phases. MVP covers the core functionality r
 | US-033 | View the full activity history for a job requisition | MVP | Must have |
 | US-034 | Edit a journal entry | MVP | Should have |
 | US-040 | Upload a resume version for a job requisition | MVP | Must have |
-| US-041 | Add a change description when uploading a new resume version | MVP | Must have |
-| US-042 | View the version history of resumes for a job requisition | MVP | Must have |
+| US-041 | Link a resume to a job requisition | MVP | Must have |
+| US-042 | View all uploaded resumes | MVP | Must have |
 | US-043 | Download a specific resume version | MVP | Must have |
+| US-044 | Link a cover letter to a job requisition | MVP | Must have |
 | US-050 | Receive an email reminder when no activity has been logged | Phase 2 | Should have |
 | US-051 | Configure reminder types and day thresholds | Phase 2 | Should have |
 | US-052 | Enable or disable individual reminder types | Phase 2 | Should have |
@@ -380,9 +381,9 @@ As a **job seeker**, I want to **edit a journal entry**, so that **I can correct
 
 ---
 
-## Resume management
+## Application document management
 
-These stories cover uploading, linking, and downloading resume files associated with specific job requisitions.
+These stories cover uploading, linking, and downloading resume and cover letter files associated with specific job requisitions.
 
 ### US-040
 
@@ -404,10 +405,25 @@ As a **job seeker**, I want to **link a resume to a job requisition**, so that *
 **Phase:** MVP
 
 **Acceptance criteria:**
-- A link resume action is available within the requisition detail view
+- A link resume action is available within the requisition detail Documents tab
 - The user selects from their uploaded resumes
 - Only one resume can be linked per requisition at a time
 - The linked resume is displayed on the requisition detail page
+
+### US-044
+
+As a **job seeker**, I want to **link a cover letter to a job requisition**, so that **I have a record of the cover letter I submitted alongside my resume**.
+
+**Priority:** Must have  
+**Phase:** MVP
+
+**Acceptance criteria:**
+- A link cover letter action is available within the requisition detail Documents tab, separate from the resume slot
+- The user selects from their uploaded files
+- Only one cover letter can be linked per requisition at a time
+- Linking a cover letter does not affect the linked resume and vice versa
+- The linked cover letter is displayed alongside the resume on the Documents tab
+- The cover letter can be downloaded and removed independently of the resume
 
 ### US-042
 

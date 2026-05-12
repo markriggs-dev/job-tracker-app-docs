@@ -6,7 +6,7 @@
 
 ## Context
 
-Multiple services need to store binary files uploaded by or generated for users. This includes resume files, work experience documents, and AI-generated resume outputs. A decision is required on how and where these files are stored across services.
+Multiple services need to store binary files uploaded by or generated for users. This includes resume files, cover letters, work experience documents, and AI-generated resume outputs. A decision is required on how and where these files are stored across services.
 
 ## Decision
 
@@ -16,7 +16,7 @@ Three services currently use this pattern:
 
 | Service | Bucket | Content |
 |---------|--------|---------|
-| Resume Service | `resumes` | User-uploaded PDF/DOCX resume files |
+| Resume Service | `resumes` | User-uploaded PDF/DOCX resume and cover letter files (distinguished by DocumentType) |
 | Experience Service | `experience-profiles` | User-uploaded experience documents (PDF/DOC/DOCX/TXT) |
 | AI Service | `generated-resumes` | AI-generated resume Markdown files |
 

@@ -28,10 +28,10 @@ The Job Tracker Application is built in three phases, each building on the previ
 | Real-time push | SignalR (LongPolling transport) | jobCreated/jobUpdated events invalidate TanStack Query cache |
 | Federated identity | Auth0 / OIDC / OAuth2 | JWT validation at gateway; refresh token rotation; 401 retry interceptor |
 | Relational database | PostgreSQL 16 / EF Core | Schema-per-service; auto-migrate on startup |
-| Blob storage | MinIO (S3-compatible) | Resumes, experience documents, AI-generated output |
+| Blob storage | MinIO (S3-compatible) | Resumes, cover letters, experience documents, AI-generated output |
 | Email delivery | MailKit / SendGrid SMTP | Feedback submission notification; Kafka-decoupled send |
 | AI integration | Anthropic Claude / Anthropic SDK | Server-assembled prompts; Claude.ai model (paste flow) + API model (planned) |
-| React frontend | React 19 / TypeScript / Vite | Dashboard, job detail, contacts, journal, resume, AI tabs; Auth0 SPA |
+| React frontend | React 19 / TypeScript / Vite | Dashboard, job detail, contacts, journal, documents (resume + cover letter), AI tabs; Auth0 SPA |
 | TLS & reverse proxy | Nginx Proxy Manager / Let's Encrypt | Production TLS termination |
 | Infrastructure as code | Terraform (Akamai/Linode provider) | VM, SSH key, firewall declared as code |
 | Container runtime | Docker / Docker Compose | All services containerised; 2-stage Dockerfiles |

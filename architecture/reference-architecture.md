@@ -68,14 +68,14 @@ C4Container
         Container(jobconsumer, "Job Service Consumer", ".NET 8 · BackgroundService · SignalR Hub", "Consumes job.application.* from Kafka — writes to PostgreSQL, pushes jobCreated/jobUpdated events to connected React clients via SignalR")
         Container(contactsvc, "Contact Service", ".NET 8 · EF Core", "Contact management — supports many-to-many contact/job linking with role types")
         Container(journalsvc, "Journal Service", ".NET 8 · EF Core", "Activity journal — interaction types, notes, and dates per job requisition")
-        Container(resumesvc, "Resume Service", ".NET 8 · MinIO SDK", "Resume file management — upload, download, delete, and link one resume per job application")
+        Container(resumesvc, "Resume Service", ".NET 8 · MinIO SDK", "Application document management — upload, download, delete, and link one resume and one cover letter per job application")
         Container(expsvc, "Experience Service", ".NET 8 · MinIO SDK", "Work experience document store — feeds content into AI resume prompt assembly")
         Container(aisvc, "AI Service", ".NET 8 · Anthropic SDK", "AI profile CRUD and server-side prompt assembly — fetches job description and experience content, returns assembled Claude.ai prompt")
         Container(notificationsvc, "Notification Service", ".NET 8 · BackgroundService · MailKit", "Dual Kafka consumer — consumes job events (for future notifications) and feedback.submitted (delivers email via SMTP)")
 
         ContainerDb(postgres, "PostgreSQL 16", "Relational database", "Primary data store — each service owns its own schema; EF Core migrations auto-applied on startup")
         ContainerDb(kafka, "Apache Kafka 7.6", "Event streaming platform", "Async message bus — topics: job.application.created, job.application.updated, feedback.submitted")
-        ContainerDb(minio, "MinIO", "S3-compatible object store", "Blob storage — resumes, experience documents, AI-generated resume output")
+        ContainerDb(minio, "MinIO", "S3-compatible object store", "Blob storage — resumes, cover letters, experience documents, AI-generated resume output")
     }
 
     Rel(user, react, "Uses", "HTTPS")
@@ -87,7 +87,7 @@ C4Container
     Rel(gateway, jobconsumer, "Routes /hubs/jobs (SignalR)", "HTTP / WS — LongPolling")
     Rel(gateway, contactsvc, "Routes /api/contacts", "HTTP")
     Rel(gateway, journalsvc, "Routes /api/jobs/{id}/journal", "HTTP")
-    Rel(gateway, resumesvc, "Routes /api/resumes", "HTTP")
+    Rel(gateway, resumesvc, "Routes /api/resumes, /api/jobs/{id}/documents", "HTTP")
     Rel(gateway, expsvc, "Routes /api/experience-profiles", "HTTP")
     Rel(gateway, aisvc, "Routes /api/ai-profiles, /api/jobs/{id}/generated-resumes", "HTTP")
     Rel(gateway, notificationsvc, "Routes /api/feedback", "HTTP")
@@ -102,7 +102,7 @@ C4Container
     Rel(journalsvc, postgres, "Reads / writes journal entries", "EF Core / TCP")
     Rel(aisvc, postgres, "Reads / writes AI profiles", "EF Core / TCP")
 
-    Rel(resumesvc, minio, "Stores and retrieves resume files", "S3 API / HTTP")
+    Rel(resumesvc, minio, "Stores and retrieves resume and cover letter files", "S3 API / HTTP")
     Rel(expsvc, minio, "Stores and retrieves experience documents", "S3 API / HTTP")
     Rel(aisvc, minio, "Stores AI-generated resume output", "S3 API / HTTP")
 
@@ -169,7 +169,7 @@ GitHub Pages (CDN)
 | job-tracker-app-job-service-consumer | Kafka consumer, DB writer, SignalR hub |
 | job-tracker-app-contact-service | Contact domain |
 | job-tracker-app-journal-service | Activity journal domain |
-| job-tracker-app-resume-service | Resume file management |
+| job-tracker-app-resume-service | Application document management (resumes and cover letters) |
 | job-tracker-app-experience-service | Experience document storage |
 | job-tracker-app-ai-service | AI profile management, prompt assembly |
 | job-tracker-app-notification-service | Notification and email delivery |

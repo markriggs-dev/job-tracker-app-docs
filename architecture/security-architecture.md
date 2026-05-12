@@ -133,7 +133,7 @@ All client-to-server traffic is TLS-encrypted. Internal Docker network communica
 
 | Classification | Examples | Controls |
 |---|---|---|
-| User content | Job applications, contacts, journal entries, resumes, experience documents | Auth-scoped; `userId`-filtered on every query |
+| User content | Job applications, contacts, journal entries, resumes, cover letters, experience documents | Auth-scoped; `userId`-filtered on every query |
 | Generated output | AI-generated resume files (MinIO) | Auth-scoped; `userId`-filtered; download via signed storage key |
 | Credentials | Auth0 secrets, SMTP passwords, API keys, DB passwords | `.env` only; never in source control; `.env.example` documents shape |
 | PII | Email address (from Auth0 JWT claim) | Not persisted in application database; sourced from JWT claim at runtime only |
@@ -175,7 +175,7 @@ HashiCorp Vault or Azure Key Vault for dynamic secret rotation and removal of `.
 | Token replay after expiry | Reuse of expired JWT | Short-lived tokens; expiry validated on every request at gateway | Mitigated |
 | XSS via rich text input | Malicious script in journal/job description fields | DOMPurify sanitization on all rich text input before storage | Mitigated |
 | SQL injection | Malicious input in query parameters or body | EF Core parameterized queries; no raw SQL | Mitigated |
-| Malicious file upload | Executable or oversized file via resume/experience upload | MIME type and extension validation; size limits enforced | Mitigated |
+| Malicious file upload | Executable or oversized file via resume, cover letter, or experience upload | MIME type and extension validation; size limits enforced | Mitigated |
 | Container escape | Compromised container accessing host | Docker default isolation; non-root container users where possible | Partial |
 | Secrets in Kubernetes (Phase 3) | `.env` files in K8s pod specs | HashiCorp Vault or Azure Key Vault planned | Planned (Phase 3) |
 | Encryption at rest | Disk-level access to PostgreSQL/MinIO data | Application-level encryption not yet implemented; host-level encryption present | Accepted / Phase 3 |

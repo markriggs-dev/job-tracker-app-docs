@@ -10,7 +10,7 @@ The Job Tracker application uses a polyrepo structure. Each service and frontend
 | job-tracker-app-job-service | .NET 8 | Job requisition domain |
 | job-tracker-app-contact-service | .NET 8 | Contact management |
 | job-tracker-app-journal-service | .NET 8 | Activity journal |
-| job-tracker-app-resume-service | .NET 8 | Resume versioning and blob storage |
+| job-tracker-app-resume-service | .NET 8 | Application document management — resumes and cover letters — with blob storage |
 | job-tracker-app-experience-service | .NET 8 | Work experience document storage and serving |
 | job-tracker-app-notification-service | .NET 8 | Async Kafka consumer — processes job create/edit events, sends SMTP email |
 | job-tracker-app-ai-service | .NET 8 | AI profile management, server-side prompt assembly, Claude resume generation |
