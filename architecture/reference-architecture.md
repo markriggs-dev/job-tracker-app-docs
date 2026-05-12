@@ -178,3 +178,15 @@ GitHub Pages (CDN)
 | job-tracker-app-web-angular | Angular frontend (Phase 2) |
 | job-tracker-app-infrastructure | Docker Compose, Terraform, Nginx config |
 | job-tracker-app-docs | Architecture docs, ADRs, guides |
+
+---
+
+## EA Artifact Index
+
+| Document | Purpose |
+|---|---|
+| [Executive Architecture Brief](executive-architecture-brief.md) | One-page strategic summary for non-technical stakeholders |
+| [Technology Roadmap](technology-roadmap.md) | Phase 1/2/3 capability plan with rationale and governance principles |
+| [Engineering Standards & Governance](engineering-standards-governance.md) | Coding standards, API design, ADR process, testing requirements |
+| [Security Architecture](security-architecture.md) | Threat model, identity flows, network topology, data classification |
+| [Architecture Decision Records](../adr/) | Full decision history — 10 ADRs covering all major technology choices |
