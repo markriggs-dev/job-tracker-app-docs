@@ -39,7 +39,7 @@ The guiding principle is **fan-out**. Kafka is justified when an event needs to 
 | Job Service (status change) | Synchronous | Single lightweight field update. No downstream service subscribes to status changes. |
 | Contact Service | Synchronous | Single consumer (itself). No other service needs to react to a contact being added or edited. |
 | Journal Service | Synchronous | Single consumer (itself). Journal entries are a private per-job audit trail with no cross-service subscribers. |
-| Resume Service | Synchronous | Single consumer (itself). Binary file payloads are not appropriate for Kafka regardless; metadata writes have no cross-service subscribers. |
+| Resume Service | Synchronous | Single consumer (itself). Binary file payloads (resumes, cover letters) are not appropriate for Kafka regardless; metadata writes have no cross-service subscribers. |
 | AI Service (future) | Synchronous / user-triggered | Analysis is initiated by the user, not by a system event. No fan-out required. |
 | Feedback (user-submitted) | Async via Kafka | The API returns 202 immediately; the Notification Service consumes `feedback.submitted` and sends an email. Decouples the HTTP response from the SMTP call. |
 

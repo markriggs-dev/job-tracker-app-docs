@@ -9,7 +9,7 @@
 
 ## What This System Does
 
-The Job Tracker Application is a cloud-native platform that helps job seekers manage their entire job search in one place — tracking applications, contacts, activity journals, uploaded resumes, and AI-assisted resume generation tailored to each job description.
+The Job Tracker Application is a cloud-native platform that helps job seekers manage their entire job search in one place — tracking applications, contacts, activity journals, uploaded resumes and cover letters, and AI-assisted resume generation tailored to each job description.
 
 It is a fully deployed, production system solving a real problem, built on enterprise distributed systems patterns.
 
@@ -34,7 +34,7 @@ Every technology choice is documented in an Architecture Decision Record (ADR). 
 | Async messaging | Apache Kafka | Decoupled write path; publisher and consumer scale independently |
 | Real-time push | SignalR | Live UI updates on job create/edit without client polling |
 | Database | PostgreSQL 16 / EF Core | Schema-per-service ownership; auto-migrate on startup |
-| Blob storage | MinIO (S3-compatible) | Resumes, experience documents, AI-generated output |
+| Blob storage | MinIO (S3-compatible) | Resumes, cover letters, experience documents, AI-generated output |
 | AI integration | Anthropic Claude | Server-assembled prompts; tailored resume generation |
 | Infrastructure | Docker Compose / Terraform | Fully containerised; infrastructure declared as code |
 | Hosting | Akamai VPS + GitHub Pages | Production-deployed; TLS via Let's Encrypt |
