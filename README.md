@@ -21,6 +21,10 @@ Documentation repository for the Job Tracker application. Contains architecture 
 - [ADR-004: PostgreSQL as primary data store](adr/ADR-004-postgresql.md)
 - [ADR-005: Blob storage for resume files](adr/ADR-005-blob-storage.md)
 - [ADR-006: React and Angular frontends](adr/ADR-006-frontend-frameworks.md)
+- [ADR-007: SignalR transport selection — LongPolling over WebSocket](adr/ADR-007-signalr-transport.md)
+- [ADR-008: AI integration strategy — dual-model approach with server-side prompt assembly](adr/ADR-008-ai-integration.md)
+- [ADR-009: Terraform for VPS infrastructure provisioning](adr/ADR-009-terraform-vps-provisioning.md)
+- [ADR-010: Testing strategy](adr/ADR-010-testing-strategy.md)
 
 ### User Stories
 - [All user stories](user-stories/user-stories.md)
