@@ -11,7 +11,7 @@ Claude Code session to begin implementation.
 ## About the developer
 
 - **Name:** Mark Riggs
-- **GitHub:** github.com/markriggs-dev
+- **GitHub:** github.com/markriggs-labs
 - **Role target:** Senior software engineer / architect
 - **Background:** Experienced .NET / C# engineer building a portfolio of projects
   to demonstrate distributed systems, microservices, AI integration, and modern
@@ -85,7 +85,7 @@ No full page reloads. A sticky header with nav links stays visible while scrolli
 - One sharp tagline that captures the engineering story
   (e.g. "Distributed systems. Real problems. Production-grade code.")
 - Two CTA buttons: "View My Work" (scrolls to Portfolio) and "GitHub" (opens
-  github.com/markriggs-dev in new tab)
+  github.com/markriggs-labs in new tab)
 
 #### 2. Tech Stack
 - Visual grid or icon row of technologies
@@ -153,7 +153,7 @@ No full page reloads. A sticky header with nav links stays visible while scrolli
 ## Portfolio app connection
 
 The Job Tracker React app is deployed separately at:
-`https://markriggs-dev.github.io/job-tracker-app-web-react`
+`https://markriggs-labs.github.io/job-tracker-app-web-react`
 (or the production VPS URL once deployed to Akamai)
 
 The landing page "Launch" button for Job Tracker opens this URL in a new tab.
@@ -182,7 +182,7 @@ markriggs-dev.github.io/
 
 The Job Tracker Application referenced in the Portfolio section is a real,
 complete distributed system with the following repos on GitHub under
-`github.com/markriggs-dev`:
+`github.com/markriggs-labs`:
 
 | Repo | Purpose |
 |------|---------|

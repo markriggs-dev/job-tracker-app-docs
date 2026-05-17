@@ -29,7 +29,7 @@ Internet → Router (80/443) → NAS
                                      ├── minio            (port 9000/9001)
                                      └── duckdns updater
 
-GitHub Pages → https://markriggs-dev.github.io
+GitHub Pages → https://markriggs-labs.github.io
   calls → https://yourdomain.duckdns.org/api/...
 ```
 
@@ -93,14 +93,14 @@ SSH into the NAS and clone all service repos into the same parent folder:
 ```bash
 mkdir ~/job-tracker && cd ~/job-tracker
 
-git clone https://github.com/markriggs-dev/job-tracker-app-infrastructure
-git clone https://github.com/markriggs-dev/job-tracker-app-gateway
-git clone https://github.com/markriggs-dev/job-tracker-app-job-service
-git clone https://github.com/markriggs-dev/job-tracker-app-job-service-consumer
-git clone https://github.com/markriggs-dev/job-tracker-app-contact-service
-git clone https://github.com/markriggs-dev/job-tracker-app-journal-service
-git clone https://github.com/markriggs-dev/job-tracker-app-resume-service
-git clone https://github.com/markriggs-dev/job-tracker-app-notification-service
+git clone https://github.com/markriggs-labs/job-tracker-app-infrastructure
+git clone https://github.com/markriggs-labs/job-tracker-app-gateway
+git clone https://github.com/markriggs-labs/job-tracker-app-job-service
+git clone https://github.com/markriggs-labs/job-tracker-app-job-service-consumer
+git clone https://github.com/markriggs-labs/job-tracker-app-contact-service
+git clone https://github.com/markriggs-labs/job-tracker-app-journal-service
+git clone https://github.com/markriggs-labs/job-tracker-app-resume-service
+git clone https://github.com/markriggs-labs/job-tracker-app-notification-service
 ```
 
 ---
@@ -116,7 +116,7 @@ nano .env
 Fill in all values. Key production settings:
 
 ```env
-CORS_ALLOWED_ORIGINS=https://markriggs-dev.github.io
+CORS_ALLOWED_ORIGINS=https://markriggs-labs.github.io
 DUCKDNS_SUBDOMAINS=job-tracker
 DUCKDNS_TOKEN=<your-duckdns-token>
 ```
@@ -162,10 +162,10 @@ docker compose logs -f gateway job-service job-service-consumer
 
 In the Auth0 dashboard, add the production domain to:
 
-- **Allowed Callback URLs:** `https://markriggs-dev.github.io`
-- **Allowed Logout URLs:** `https://markriggs-dev.github.io`
-- **Allowed Web Origins:** `https://markriggs-dev.github.io`
-- **Allowed Origins (CORS):** `https://markriggs-dev.github.io`
+- **Allowed Callback URLs:** `https://markriggs-labs.github.io`
+- **Allowed Logout URLs:** `https://markriggs-labs.github.io`
+- **Allowed Web Origins:** `https://markriggs-labs.github.io`
+- **Allowed Origins (CORS):** `https://markriggs-labs.github.io`
 
 ---
 
